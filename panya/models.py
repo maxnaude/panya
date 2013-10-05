@@ -72,6 +72,7 @@ class ModelBase(ImageModel):
         User, 
         blank=True,
         null=True,
+        limit_choices_to = getattr(settings, 'PANYA_OWNER_LIMIT_CHOICES_TO', None),
     )
     content_type = models.ForeignKey(
         ContentType, 
